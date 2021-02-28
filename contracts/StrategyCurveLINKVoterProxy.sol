@@ -12,7 +12,7 @@ import "./interfaces/yearn.sol";
 import {IUniswapV2Router02} from "./interfaces/uniswap.sol";
 
 
-contract StrategyCurveIBVoterProxy is BaseStrategy {
+contract StrategyCurveLINKVoterProxy is BaseStrategy {
     using SafeERC20 for IERC20;
     using Address for address;
     using SafeMath for uint256;
