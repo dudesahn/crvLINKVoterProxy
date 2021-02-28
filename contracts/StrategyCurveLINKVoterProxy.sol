@@ -110,8 +110,8 @@ contract StrategyCurveLINKVoterProxy is BaseStrategy {
             
             _sell(crvRemainder);
 
- 				uint256 linkBalance = link.balanceOf(address(this));
-  				crvLINKpool.add_liquidity([linkBalance, 0], 0);
+ 			uint256 linkBalance = link.balanceOf(address(this));
+  			crvLINKpool.add_liquidity([linkBalance, 0], 0);
 			
 			
             _profit = want.balanceOf(address(this));
