@@ -9,7 +9,7 @@ def test_migration(
     whale,
     gov,
     strategist,
-    StrategyCurveIBVoterProxy
+    StrategyCurveLINKVoterProxy
 ):
     debt_ratio = 10_000
     vault.addStrategy(strategy, debt_ratio, 0, 2 ** 256 -1, 1000, {"from": gov})
@@ -29,7 +29,7 @@ def test_migration(
         "{:.2%}".format(((vault.totalAssets() - 100 * 1e18) * 12) / (100 * 1e18)),
     )
 
-    strategy2 = strategist.deploy(StrategyCurveIBVoterProxy, vault)
+    strategy2 = strategist.deploy(StrategyCurveLINKVoterProxy, vault)
     vault.migrateStrategy(strategy, strategy2, {"from": gov})
     genericStateOfStrat(strategy, token, vault)
     genericStateOfStrat(strategy2, token, vault)
